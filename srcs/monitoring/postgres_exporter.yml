@@ -1,0 +1,3 @@
+databases:
+  - name: postgres
+    dsn: "postgresql://<user>:<password>@<host>:5432/<dbname>?sslmode=disable"

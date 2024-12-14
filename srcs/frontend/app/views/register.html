@@ -1,0 +1,57 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="register.title">Inscription - Ft_transcendence</title>
+    <link rel="stylesheet" href="/asset/css/spinners/register-spinner.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title" data-i18n="register.form_title">Inscription</h2>
+
+        <!-- Conteneur pour les alertes avec une classe spécifique -->
+        <div class="alert-container"></div>
+
+        <form id="register-form">
+            <label for="username-signup" data-i18n="register.username_label">Nom d'utilisateur</label>
+            <input type="text" id="username-signup" name="username" required aria-describedby="error-message" data-i18n="register.username_placeholder" data-i18n-attr="placeholder" placeholder="Nom d'utilisateur">
+
+            <label for="email-signup" data-i18n="register.email_label">Email</label>
+            <input type="email" id="email-signup" name="email" required aria-describedby="error-message" data-i18n="register.email_placeholder" data-i18n-attr="placeholder" placeholder="Email">
+
+            <label for="password-signup" data-i18n="register.password_label">Mot de passe</label>
+            <input type="password" id="password-signup" name="password" required aria-describedby="error-message" data-i18n="register.password_placeholder" data-i18n-attr="placeholder" placeholder="Mot de passe">
+
+            <label for="confirm-password" data-i18n="register.confirm_password_label">Confirmer le mot de passe</label>
+            <input type="password" id="confirm-password" name="confirm-password" required aria-describedby="error-message" data-i18n="register.confirm_password_placeholder" data-i18n-attr="placeholder" placeholder="Confirmer le mot de passe">
+
+            <button type="submit" class="signup-button retro-button" data-i18n="register.signup_button">S'inscrire</button>
+        </form>
+
+        <button id="back-to-login-button" class="back-button retro-button" data-i18n="register.back_button">Retour</button>
+    </div>
+
+    <!-- Overlay de chargement -->
+    <div id="register-loading-overlay" class="register-loading-overlay" style="display: none;">
+        <div class="register-spinner-container">
+            <div class="register-spinner-large"></div>
+            <p class="register-loading-text" data-i18n="register.loading_text">Inscription...</p>
+        </div>
+        <!-- Conteneur pour le check de confirmation -->
+        <div id="register-success-check" class="register-success-check" style="display: none;">
+            <svg class="register-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="register-checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="register-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            <p class="register-success-text" data-i18n="register.success_text">Inscription réussie !</p>
+        </div>
+    </div>
+
+    <!-- Your JavaScript files -->
+    <script src="/asset/js/i18next.js"></script>
+    <script src="/asset/js/i18next-http-backend.js"></script>
+    <script src="/asset/js/alertManager.js"></script> <!-- Nouveau module pour gérer les alertes -->
+    <script src="/asset/js/register.js"></script>
+</body>
+</html>

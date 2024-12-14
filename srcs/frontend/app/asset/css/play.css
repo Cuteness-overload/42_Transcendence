@@ -1,0 +1,127 @@
+/* ************************************ */
+/*        Game Layout and Styling       */
+/* ************************************ */
+
+.game-box {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#game-end {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 200px;
+    background-color: black;
+    border: 6px solid white;
+}
+
+#game-canvas {
+    background-color: black;
+    border: 6px solid white;
+    width: 800px;
+    height: 600px;
+}
+
+.score {
+    font-size: 24px;
+    margin-bottom: 10px;
+    min-width: 100px;
+}
+
+#j4score-disp{
+    margin-top: 10px;
+}
+
+.replay{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#play-again-button{
+    background-color: #000000;
+    color: white;
+}
+
+.tactile-buttons-container {
+    display: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tactile-button {
+    width: 150px;
+    height: 75px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 75px;
+    margin: 50px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+@media (max-width: 811px) {
+    .tactile-buttons-container {
+        display: block !important;
+    }
+
+    .game-box {
+        flex-direction: column;
+    }
+
+    .score {
+        font-size: 18px;
+    }
+
+    #game-canvas {
+        width: 100%;
+        height: auto;
+    }
+
+    .tactile-button {
+        width: 40vw;
+        height: 20vw;
+        line-height: 20vw;
+        font-size: 5vw;
+        margin: 10px;
+    }
+
+    .score {
+        font-size: 5vw;
+        min-width: 60px;
+    }
+
+    .back-button {
+        font-size: 3vw;
+        padding: 10px 20px;
+        width: 80%;
+        max-width: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tactile-button {
+        width: 40vw;
+        height: 20vw;
+        line-height: 20vw;
+        font-size: 5vw;
+    }
+
+    .score {
+        font-size: 5vw;
+    }
+
+    .back-button {
+        font-size: 3vw;
+    }
+}

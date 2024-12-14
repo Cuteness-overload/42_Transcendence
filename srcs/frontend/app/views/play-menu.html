@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+   <body>
+      <div class="tournament-page" id="tournament-menu">
+         <form id="tournament-form">
+            <div id="tournament-player-list" style="margin-bottom: 40px;">
+               <div class="tournament-player-column">
+                  <label for="P1"><p data-i18n="tournament.player1_label">Joueur 1</p></label>
+                  <input type="text" id="P1" name="P1" style="color: rgb(150,150,150);">
+                  <label for="P2"><p data-i18n="tournament.player2_label">Joueur 2</p></label>
+                  <input type="text" id="P2" name="P2">
+               </div>
+               <div class="tournament-player-column">
+                  <label for="P3"><p data-i18n="tournament.player3_label">Joueur 3</p></label>
+                  <input type="text" id="P3" name="P3">
+                  <label for="P4"><p data-i18n="tournament.player4_label">Joueur 4</p></label>
+                  <input type="text" id="P4" name="P4">
+               </div>
+            </div>
+            <div class="tournament-menu-buttons">
+               <button type="submit" class="retro-button start-tournament-button" data-i18n="tournament.start_button">Lancer</button>
+               <button class="retro-button return-tournament-button" id="tournament-return-button" data-i18n="tournament.return_button">Retour</button>
+            </div>
+         </form>
+         <div id="allFields" class="match-list" style="display: none;"><p data-i18n="tournament.all_fields_required">Tous les champs doivent être remplis.</p></div>
+         <div id="uniques" class="match-list" style="display: none;"><p data-i18n="tournament.unique_names_required">Les noms doivent etre uniques.</p></div>
+      </div>
+      <div class="play-menu" id="play-menu">
+      <div class="play-menu">
+         <div id="play-modes" class="mode-menu">
+            <div class="selector-title" data-i18n="play_menu.game_modes_title">Mode de jeu</div>
+            <div class="mode-selector" id="game-modes">
+               <button id="play-menu-VsAi-button" class="game-mode-button retro-button" data-i18n="play_menu.vs_bot_button">vs BOT</button>
+               <button id="play-menu-2P-button" class="game-mode-button retro-button" data-i18n="play_menu.two_players_button">2 Joueurs</button>
+               <button id="play-menu-4P-button" class="game-mode-button retro-button" data-i18n="play_menu.four_players_button">4 Joueurs</button>
+               <button id="play-menu-tournament-button" class="game-mode-button retro-button" data-i18n="play_menu.tournaments_button">Tournois</button>
+            </div>
+         </div>
+         <div id="ball-settings" class="mode-menu">
+            <div class="selector-title" data-i18n="play_menu.ball_speed_title">Vitesse de la balle</div>
+            <div class="mode-selector" id="game-modes">
+               <button id="ball-menu-slow-button" class="game-mode-button retro-button" data-i18n="play_menu.slow_button">Lente</button>
+               <button id="ball-menu-normal-button" class="game-mode-button retro-button" data-i18n="play_menu.normal_button">Normale</button>
+               <button id="ball-menu-fast-button" class="game-mode-button retro-button" data-i18n="play_menu.fast_button">Rapide</button>
+               <button id="ball-menu-hell-button" style="display: none;" class="game-mode-button retro-button" data-i18n="play_menu.hell_button">HELL</button>
+            </div>
+         </div>
+         <div id="paddle-settings" class="mode-menu">
+            <div class="selector-title" data-i18n="play_menu.paddle_size_title">Taille de la barre</div>
+            <div class="mode-selector" id="game-modes">
+               <button id="paddle-menu-small-button" class="game-mode-button retro-button" data-i18n="play_menu.small_button">Petit</button>
+               <button id="paddle-menu-normal-button" class="game-mode-button retro-button" data-i18n="play_menu.normal_paddle_button">Normal</button>
+               <button id="paddle-menu-big-button" class="game-mode-button retro-button" data-i18n="play_menu.big_button">Grand</button>
+            </div>
+         </div>
+         <div id="map-settings" class="mode-menu">
+            <div class="selector-title" data-i18n="play_menu.map_type_title">Type de terrain</div>
+            <div class="mode-selector" id="game-modes">
+               <button id="map-menu-normal-button" class="game-mode-button retro-button" data-i18n="play_menu.normal_map_button">Normal</button>
+               <button id="map-menu-hole-button" class="game-mode-button retro-button" data-i18n="play_menu.unusual_map_button">Pas normal</button>
+               <button id="map-menu-obstacle-button" class="game-mode-button retro-button" data-i18n="play_menu.obstacles_map_button">Obstacles</button>
+            </div>
+         </div>
+      </div>
+   </body>
+   <footer>
+      <button id="start-game-play-menu-button" class="play-menu-button retro-button" data-i18n="play_menu.start_game_button">Start game</button>
+   </footer>
+   </html>
+   <!-- <script src="/asset/js/i18next.js"></script>
+   <script src="/asset/js/i18next-http-backend.js"></script> -->
+</html>

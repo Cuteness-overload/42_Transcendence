@@ -1,0 +1,63 @@
+/* navbar.css - Updated style for neon theme with mobile compatibility */
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-color: #130028db; /* Fallback if the image doesn't load */
+    padding: 0;
+    border-bottom: 2px solid #00ffcc;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: auto; /* Adjust height automatically */
+    flex-wrap: wrap;
+    overflow-x: auto;
+    box-shadow: 0 0 15px #00ffcc;
+    padding-bottom: 10px; /* Add padding to avoid content being cut off */
+}
+
+.navbar-container{
+    margin-bottom: 120px;
+}
+
+/* Navbar buttons with neon style */
+.navbar-button {
+    margin: 10px 20px; /* Adjust margin for better spacing */
+    padding: 12px 25px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: 2px solid #2500ff40;
+    font-family: "Audiowide", sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #ff0057f2, 0 0 10px #9600ff;
+}
+
+/* Hover effect for navbar buttons */
+.navbar-button:hover {
+    background-color: #ff009b00;
+    /* color: #000; */
+    box-shadow: 0 0 20px #0d00ffe8, 0 0 30px #ff7100a8;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        padding: 10px; /* Add padding */
+    }
+
+    .navbar-button {
+        margin: 10px 0; /* Add margin to buttons */
+        width: 100%; /* Make buttons full width */
+        text-align: center; /* Center text */
+    }
+}

@@ -1,0 +1,36 @@
+# Ignorer les fichiers de logs
+*.log
+logs
+access.log
+error.log
+
+# Ignorer les fichiers temporaires ou de cache
+*.tmp
+*.cache
+tmp/
+cache/
+
+# Ignorer les répertoires de contrôle de version
+.git
+.gitignore
+
+# Ignorer les fichiers de configuration locaux
+.env
+.env.*
+
+# Ignorer les fichiers de sauvegarde d'éditeurs de texte
+*~
+*.swp
+*.swo
+*.bak
+
+# Ignorer les modules Node.js (si applicable)
+node_modules/
+
+# Ignorer les certificats SSL/TLS (si vous les gérez séparément)
+*.pem
+*.key
+*.crt
+
+# Ignorer les fichiers de test
+tests/

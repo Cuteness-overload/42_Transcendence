@@ -1,0 +1,43 @@
+<!-- connect42.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="connect42.form_title">Connexion via 42 - Ft_transcendence</title>
+    <link rel="stylesheet" href="/asset/css/spinners/connect42-spinner.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title" data-i18n="connect42.form_title">Connexion via 42</h2>
+
+        <!-- Conteneur pour les alertes avec une classe spécifique -->
+        <div class="alert-container"></div>
+
+        <form id="connect42-form">
+            <label for="email" data-i18n="connect42.email_label">Email</label>
+            <input type="email" id="email" name="email" readonly data-i18n-attr="placeholder" placeholder="Email">
+
+            <label for="password" data-i18n="connect42.password_label">Mot de passe</label>
+            <input type="password" id="password" name="password" required data-i18n="connect42.password_placeholder" data-i18n-attr="placeholder" placeholder="Mot de passe">
+
+            <button type="submit" class="connect42-submit-button retro-button" data-i18n="connect42.submit_button">Se connecter</button>
+        </form>
+
+        <button id="back-to-login-button" class="back-button retro-button" data-i18n="connect42.back_button">Retour</button>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="connect42-loading-overlay" class="connect42-loading-overlay" style="display: none;">
+        <div class="connect42-spinner-container">
+            <div class="connect42-spinner-large"></div>
+            <p class="connect42-loading-text" data-i18n="connect42.loading_text">Connexion...</p>
+        </div>
+    </div>
+
+    <!-- Your JavaScript file -->
+    <script src="/asset/js/i18next.js"></script>
+    <script src="/asset/js/i18next-http-backend.js"></script>
+    <script src="/asset/js/alertManager.js"></script> <!-- Nouveau module pour gérer les alertes -->
+    <script src="/asset/js/connect42.js"></script>
+</body>
+</html>

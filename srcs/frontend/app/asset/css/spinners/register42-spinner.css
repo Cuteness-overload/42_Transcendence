@@ -1,0 +1,73 @@
+/* /asset/css/register42-spinner.css */
+
+/* ************************************ */
+/*         Overlay de Chargement         */
+/* ************************************ */
+
+.register42-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent noir */
+    display: none; /* Initialement caché */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* S'assure que l'overlay est au-dessus de tous les autres éléments */
+}
+
+.register42-spinner-container {
+    text-align: center;
+    color: #ff0080; /* Couleur néon */
+}
+
+.register42-spinner-large {
+    border: 8px solid rgba(255, 255, 255, 0.3); /* Bordure légère */
+    border-top: 8px solid #ff0080; /* Couleur du spinner */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: register42-spin 1s linear infinite;
+    margin: 0 auto 20px auto; /* Centrage horizontal et espace en dessous */
+}
+
+.register42-loading-text {
+    font-size: 24px;
+    font-family: 'Audiowide', cursive; /* Police rétro */
+    color: #ff0080;
+    text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+}
+
+/* Animation de rotation */
+@keyframes register42-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ************************************ */
+/*         Styles du Checkmark          */
+/* ************************************ */
+
+.register42-success-check {
+    text-align: center;
+    color: #4CAF50; /* Couleur verte pour le succès */
+}
+
+.register42-checkmark {
+    width: 80px;
+    height: 80px;
+    stroke: #4CAF50;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    margin: 0 auto 20px auto;
+}
+
+.register42-success-text {
+    font-size: 24px;
+    font-family: 'Audiowide', cursive;
+    color: #4CAF50;
+    text-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50, 0 0 30px #4CAF50;
+}

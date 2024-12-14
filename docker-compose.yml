@@ -1,0 +1,113 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres:13
+    container_name: database
+    env_file:
+      - .env
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+  backend:
+    build:
+      context: ./srcs/backend
+    container_name: backend
+    volumes:
+      - ./srcs/backend:/app
+      - media-data:/app/media
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - database
+
+  frontend:
+    build:
+      context: ./srcs/frontend
+    container_name: frontend
+    volumes:
+      - frontend-static:/usr/share/nginx/html  # Volume partagé
+    depends_on:
+      - backend
+    command: ["sh", "-c", "cp -r /app/* /usr/share/nginx/html/ && tail -f /dev/null"]
+
+  nginx:
+    build:
+      context: ./srcs/nginx
+    container_name: nginx
+    ports:
+      - "3000:80"
+      - "3443:443"
+    depends_on:
+      - backend
+      - frontend
+    volumes:
+      - frontend-static:/usr/share/nginx/html  # Volume partagé
+      - media-data:/usr/share/nginx/media
+      # Les fichiers de configuration Nginx sont copiés dans l'image lors de la construction
+
+  tests:
+    build:
+      context: ./srcs/tests
+    container_name: tests
+    depends_on:
+      - backend
+    networks:
+      - default
+    command: ["python", "test_backend.py"]
+
+  prometheus:
+    build:
+      context: ./srcs/devops/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    command:
+      - '--config.file=/etc/prometheus-custom/prometheus.yml'
+      - '--storage.tsdb.retention.time=30d'
+      - '--storage.tsdb.path=/prometheus'
+    volumes:
+      - prometheus-data:/prometheus
+    depends_on:
+      - node_exporter
+      - postgres_exporter
+
+  grafana:
+    build:
+      context: ./srcs/devops/grafana
+    container_name: grafana
+    volumes:
+      - grafana-data:/var/lib/grafana
+      #- ./srcs/devops/grafana/dashboards:/var/lib/grafana/dashboards
+    env_file:
+      - .env
+    ports:
+      - "3001:3000"
+    depends_on:
+      - prometheus
+
+  node_exporter:
+    image: prom/node-exporter
+    container_name: node_exporter
+    ports:
+      - "9200:9100"
+
+  postgres_exporter:
+    image: prometheuscommunity/postgres-exporter
+    container_name: postgres_exporter
+    ports:
+      - "9187:9187"
+    depends_on:
+      - database
+
+volumes:
+  db_data:
+  vault_data:
+  frontend-static:  # Volume nommé pour les fichiers frontend
+  media-data:       # Volume nommé pour les fichiers médias
+  prometheus-data:
+  grafana-data:

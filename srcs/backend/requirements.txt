@@ -1,0 +1,14 @@
+Django>=3.2,<4.0
+gunicorn
+django-cors-headers
+djangorestframework
+djangorestframework-simplejwt
+psycopg2-binary
+Pillow
+requests
+pyotp
+qrcode
+django-ratelimit
+argon2-cffi
+django-prometheus==2.2.0
+# Ajoutez d'autres dépendances si nécessaire

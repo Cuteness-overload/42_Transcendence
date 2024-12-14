@@ -1,0 +1,26 @@
+/* Connexion Page */
+.connexion-page .form-container {
+    border: 2px solid #f8f8f2;
+    margin-top: 15%;
+}
+
+#login-form {
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	width: 300px;
+}
+
+#login-form > label {
+	width:300px;
+}
+
+#bottom-buttons {
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+}
+
+.login-button {
+	margin-top: 20px;
+}

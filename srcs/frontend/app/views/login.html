@@ -1,0 +1,52 @@
+<!-- /views/login.html -->
+<div class="login-page">
+    <!-- Boutons de sélection de langue spécifiques à la page de login -->
+    <div class="language-selector mt-4 text-center">
+        <button id="lang-fr" class="language-button btn btn-lang" data-lang="fr">Français</button>
+        <button id="lang-en" class="language-button btn btn-lang" data-lang="en">English</button>
+        <button id="lang-es" class="language-button btn btn-lang" data-lang="es">Español</button>
+    </div>
+
+    <header style="margin-bottom: 20px">
+        <h1 id="main-title" class="text-center" data-i18n="login.main_title">Ft_transcendence</h1>
+    </header>
+    <link rel="stylesheet" href="/asset/css/spinners/login-spinner.css">
+    <!-- Conteneur principal de la page de login -->
+    <div class="container d-flex flex-column align-items-center justify-content-center" style="min-height: 75vh;">
+        <div class="form-container">
+            <h2 class="form-title" data-i18n="login.form_title">Connexion</h2>
+            <!-- Conteneur pour les alertes avec une classe spécifique -->
+            <div class="login-alert-container"></div>
+            <form id="login-form">
+                <label for="username" data-i18n="login.username_label">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" required
+                       data-i18n-attr="placeholder" data-i18n-key="login.username_placeholder"
+                       placeholder="Nom d'utilisateur">
+
+                <label for="password" data-i18n="login.password_label">Mot de passe</label>
+                <input type="password" id="password" name="password" required
+                       data-i18n-attr="placeholder" data-i18n-key="login.password_placeholder"
+                       placeholder="Mot de passe">
+
+                <label for="code_2fa" data-i18n="login.code_2fa_label">Code 2FA (Si actif)</label>
+                <input type="text" id="code-2fa" name="code-2fa" value=""
+                       data-i18n-attr="placeholder" data-i18n-key="login.code_2fa_placeholder"
+                       placeholder="Code 2FA">
+
+                <button type="submit" class="retro-button login-button" data-i18n="login.submit_button">Se connecter</button>
+            </form>
+            <div id="bottom-buttons" class="mt-3">
+                <button id="register-button" class="register-button retro-button" data-i18n="login.register_button">Inscription</button>
+                <button id="oauth-login-42" class="register-button oauth-button" data-i18n="login.oauth_login_button">Connexion via 42</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay de chargement -->
+    <div id="login-loading-overlay" class="login-loading-overlay" style="display: none;">
+        <div class="login-spinner-container">
+            <div class="login-spinner-large"></div>
+            <p class="login-loading-text" data-i18n="login.loading_text">Connexion...</p>
+        </div>
+    </div>
+</div>

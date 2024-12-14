@@ -1,0 +1,153 @@
+/* Container principal pour la gestion des amis */
+.friend-list-container {
+    width: 50%;
+    padding: 50px;
+    background-color: var(--background-color); /* Utilisation de la couleur de fond principale */
+    border-radius: 12px;
+    border: 2px solid var(--secondary-color); /* Couleur pour la bordure */
+    box-shadow: 
+        0 0 6px var(--secondary-color),      /* Ombre douce */
+        0 0 12px rgba(0, 255, 204, 0.5), 
+        0 0 24px rgba(0, 255, 204, 0.3); /* Effet lumineux réduit */
+    color: var(--text-color); /* Couleur du texte */
+    display: none;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    left: 25%;
+    top: 20%;
+    text-shadow: 
+        0 0 3px var(--primary-color), 
+        0 0 6px rgba(255, 0, 128, 0.6); /* Effet néon réduit sur le texte */
+}
+
+
+/* Actions des amis : afficher les boutons */
+.friend-list-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style des boutons dans la gestion des amis */
+.friend-list-actions button {
+    background-color: #00bfae; /* Vert plus doux */
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 6px #00bfae; /* Néon vert autour des boutons, plus doux */
+}
+
+/* Effet au survol des boutons */
+.friend-list-actions button:hover {
+    background-color: #00a28c; /* Vert légèrement plus foncé au survol */
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00bfae; /* Légère intensification du glow au survol */
+}
+
+/* Conteneur parent des amis (liste des amis) */
+.parents-list {
+    width: 34%;
+    margin: 0 auto;
+    color: white;
+    background: #333; /* Fond plus neutre pour les amis */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Ombre plus douce */
+    overflow-y: auto; /* Permet le défilement */
+    left: 64%;
+    max-height: 300px; /* Hauteur maximale du conteneur */
+    top: 38%;
+    position: absolute;
+    padding: 15px;
+    text-shadow: 0 0 4px #00bfae, 0 0 8px #00bfae; /* Néon subtil autour du texte */
+}
+
+/* Liste des amis */
+.friend-list-display {
+    position: fixed;
+    top: 200px;
+    right: 20px;
+    width: 22%;
+    background: black;
+    border: 3px solid white;
+    border-radius: 8px;
+    color: white;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 8px #00bfae;
+    overflow-y: auto;
+    height: 250px;
+    padding: 0;
+}
+
+/* Personnalisation de la barre de défilement */
+.friend-list-display::-webkit-scrollbar {
+    width: 8px;
+}
+
+.friend-list-display::-webkit-scrollbar-thumb {
+    background-color: #00bfae;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.friend-list-display::-webkit-scrollbar-thumb:hover {
+    background-color: #00a28c;
+}
+
+/* Séparateur entre les noms d'amis */
+.friend-item {
+    padding: 10px;
+    border-bottom: 2px solid  #ff0080; /* Séparateur */
+    text-align: center;
+}
+
+/* Fin block list damis */
+
+/* Style de survol pour les items */
+.friend-item:hover {
+    background-color: #333;
+    box-shadow: 0 0 8px #00bfae;
+    cursor: pointer;
+}
+
+
+/* Effet au survol de chaque bloc d'ami */
+.friend-block:hover {
+    background-color: #555; /* Légère variation au survol */
+    box-shadow: 0 0 12px #00bfae; /* Intensification du néon au survol */
+}
+
+/* Style du nom de l'ami */
+.friend-block .friend-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #00ffcc; /* Plus doux mais toujours lumineux */
+    text-shadow: 0 0 4px #00ffcc, 0 0 8px #00ffcc; /* Légèrement lumineux */
+}
+
+/* Boutons dans les blocs d'ami (ex: supprimer) */
+.friend-block button {
+    background-color: #ff0000; /* Rouge pour les boutons de suppression */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 4px #ff0000; /* Néon subtil autour des boutons */
+}
+
+/* Effet au survol des boutons dans les blocs */
+.friend-block button:hover {
+    background-color: #cc0000; /* Rouge plus foncé au survol */
+    transform: scale(1.1); /* Légère augmentation au survol */
+    box-shadow: 0 0 8px #ff0000; /* Intensification du néon autour du bouton */
+}
+
+
+

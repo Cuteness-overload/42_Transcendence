@@ -1,0 +1,21 @@
+groups:
+  - name: example_alerts
+    rules:
+      - alert: HighMemoryUsage
+        expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) < 0.1
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High memory usage detected"
+          description: "Available memory is less than 10% for the past 5 minutes."
+  - name: unauthorized_alerts
+    rules:
+      - alert: HighUnauthorizedRequests
+        expr: increase(django_http_requests_before_middlewares_total{status=~"401|403"}[5m]) > 10
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Nombre élevé de requêtes non autorisées"
+          description: "Plus de 10 requêtes 401 ou 403 dans les 5 dernières minutes."

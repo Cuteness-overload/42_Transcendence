@@ -1,0 +1,102 @@
+/* login.css */
+
+/* Fond du formulaire avec effet néon */
+.form-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 16px;
+    border-radius: 50px;
+    border: 3px solid #00ffcc;
+    box-shadow: 0 0 20px #00ffcc;
+}
+
+/* Input avec un bord lumineux */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+.retro-input {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ffcc;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #00ffcc;
+}
+
+/* Boutons */
+.retro-button {
+	background: rgb(174 13 253 / 54%);
+	border: 2px solid #7700ff;
+	border-radius: 30px;
+	box-shadow: 0 0 10px #c700ff, -1px 1px 20px 0px #0900ffe6;
+}
+
+.retro-button:hover {
+    background: #fa66ff;
+    box-shadow: 0 0 20px #bf66ff, 0 0 40px #ff66b2;
+    border: 2px solid #fb00ff1a;
+}
+
+/* Neon styling for title */
+#main-title {
+	margin-top: 22px;
+	color: #00ffc6;
+	text-shadow: 0 0 5px #ff00c1, 0 0 15px #b900ff, 0 0 20px #ff00c8;
+}
+
+/* Ensure there's no negative margin overriding the layout */
+.form-container {
+    margin: auto; /* Center on page */
+    padding: 20px; /* Adjust padding if necessary */
+}
+
+/* Style pour le conteneur du sélecteur de langue */
+.language-selector {
+    margin-top: -5rem !important;
+
+}
+
+/* Styles communs pour tous les boutons de langue */
+.language-button.btn-lang {
+    margin: 0 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de survol */
+.language-button.btn-lang:hover {
+    background-color: #f96ffb;
+    box-shadow: 0 0 20px #bf66ff, 0 0 40px #ff66b2;
+    border: 2px solid #f96ffb;
+    color: white;
+    /* color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); */
+}
+
+/* Effet pour le bouton actif (langue sélectionnée) */
+.language-button.btn-lang.active {
+	color: #fff;
+	background-color: #a72872;
+	border-color: #a72872;
+	box-shadow: 0 0 62px var(--primary-color), 0 0 20px var(--primary-color);
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding-top: 30px; /* Adjust spacing on smaller screens */
+    }
+
+    .form-container {
+        margin-top: 10px; /* Reduce spacing further for compact screens */
+    }
+}

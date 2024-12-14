@@ -1,0 +1,132 @@
+/* Styles pour le container principal */
+.history-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000000; /* Utilisation de la couleur de fond principale */
+    border: 2px solid var(--secondary-color); /* Bordure lumineuse subtile */
+    border-radius: 12px;
+    box-shadow: 
+        0 0 8px var(--secondary-color), 
+        0 0 16px rgba(0, 255, 204, 0.5); /* Effet lumineux doux */
+    height: 450px;
+    overflow-y: auto; /* Ajout d'une barre de défilement verticale lorsque le contenu déborde */
+    display: none; /* Caché par défaut */
+    color: var(--text-color); /* Texte en blanc ou défini */
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    left: 24%;
+    top: 20%;
+    text-shadow: 0 0 3px var(--secondary-color), 0 0 5px rgba(0, 255, 204, 0.7); /* Effet lumineux subtil sur le texte */
+}
+
+/* Style pour la barre de défilement sur tous les navigateurs modernes */
+.history-container::-webkit-scrollbar {
+    width: 8px; /* Largeur de la barre de défilement */
+}
+
+.history-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5); /* Couleur de la piste de la scrollbar */
+    border-radius: 10px; /* Coins arrondis pour la piste */
+}
+
+.history-container::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color); /* Couleur de la poignée */
+    border-radius: 10px; /* Coins arrondis pour la poignée */
+    box-shadow: 0 0 5px var(--secondary-color); /* Effet lumineux autour de la poignée */
+}
+
+.history-container::-webkit-scrollbar-thumb:hover {
+    background-color: #00bfae; /* Couleur de la poignée au survol */
+    box-shadow: 0 0 8px #00bfae; /* Ombre plus intense au survol */
+}
+
+/* Animation pour rendre visible */
+.history-container.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1); /* Transition fluide pour apparaître */
+}
+
+.history-container.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    display: none;
+}
+
+
+/* Titre de la section Historique des parties */
+.history-container h2 {
+    font-size: 24px;
+    text-shadow: 0 0 5px #ff0057f2, 0 0 10px #9600ff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* Détails de chaque partie */
+.game-details {
+    
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Classe spécifique pour le texte du match */
+.match {
+    color: #00ffcc;  /* Couleur néon pour le match */
+}
+
+/* Style spécifique pour les scores */
+.score {
+    font-size: 18px;
+    font-weight: bold;
+   
+}
+
+/* Styles spécifiques pour les résultats de match (victoire/défaite) */
+.victory {
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #9600ff;  /* Vert vif pour la victoire */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.defeat {
+    font-size: 20px;
+    text-shadow: 0 0 5px #ff0057f2, 0 0 10px #9600ff;
+}
+
+/* Conteneur pour chaque partie */
+.game-histo {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 8px #ff0057f2, 0 0 16px rgba(0, 255, 204, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #ff0057f2;
+    text-shadow: 0 0 5px #ff0057f2, 0 0 10px #9600ff;
+}
+
+
+
+.close-history {
+    background-color: #00ffc6;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* width: 100%; */
+    text-align: center;
+    position: absolute;
+    left: 70%;
+    top: 50%;
+}
+
+/* Effet au survol du bouton de fermeture */
+.close-history:hover {
+    background-color: #00bfae; /* Couleur plus sombre au survol */
+    transform: scale(1.05); 
+}

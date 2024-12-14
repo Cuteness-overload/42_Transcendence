@@ -1,0 +1,74 @@
+<div class="profile-page loading" id="profile-page">
+    <!-- Spinner de Chargement -->
+    <div class="spinner-container">
+        <div class="neon-spinner" role="status">
+            <span class="visually-hidden" data-i18n="profile.loading_text">Chargement...</span>
+        </div>
+        <div class="loading-text" data-i18n="profile.loading_text">Chargement...</div>
+    </div>
+
+    <!-- Contenu du Profil, Masqué Pendant le Chargement -->
+    <div class="profile-content" id="profile-content" style="position: relative;">
+        <h1 class="profile-title">
+            <span data-i18n="profile.title">Mon Profil</span> (<span id="username-display"></span>)
+        </h1>
+        <div id="profile-alert-container"></div>
+        <div class="avatar-section">
+            <div class="avatar-wrapper">
+                <img id="avatar-preview" src="/media/avatars/default-avatar.png" alt="Avatar" class="avatar-image">
+                <input type="file" id="avatar-input" class="avatar-input">
+                <label for="avatar-input" class="avatar-edit-button">
+                    <i class="edit-icon">&#9998;</i>
+                </label>
+            </div>
+            <button id="list-friend" class="retro-button" data-i18n="profile.friend_list_button">Liste d'amis</button>
+            <button id="view-history" class="retro-button" data-i18n="profile.history_button">Historique des parties</button>
+        </div>
+        <div id="history-container" class="history-container">
+            <div class="history-actions">
+                <button id="view-games" class="retro-button view-games" data-i18n="profile.view_games_button">Voir l’historique des parties</button>
+                <button id="clear-history" class="retro-button clear-history" data-i18n="profile.clear_history_button">Effacer l’historique</button>
+            </div>
+            <ul id="game-history" class="game-history">
+            </ul>
+        </div>
+
+        <!-- Conteneurs Supplémentaires -->
+       
+        <div id="friend-list-container" class="friend-list-container">
+            <div class="friend-list-actions">
+                <button id="view-friends-id" class="retro-button view-friends" data-i18n="profile.view_friends_button">Amis</button>
+                <button id="add-friend-id" class="retro-button add-friend" data-i18n="profile.add_friend_button">Ajouter un ami</button>
+                <button id="remove-friend-id" class="retro-button remove-friend" data-i18n="profile.remove_friend_button">Supprimer un ami</button>
+                <button id="close-friend-list" class="retro-button close-friend-list" data-i18n="profile.close_friend_list_button">Fermer la liste d'amis</button>
+                <ul id="friend-list-display-id" class="friend-list-display"></ul>
+            </div>
+    </div>
+    <div id="friend-added-notification"></div>
+
+   <div id="history-container" class="history-container">
+    <h2>Historique des Parties</h2>
+    <div id="history-content">
+  
+    </div>
+
+    <button id="back-button" class="close-history">Fermer</button>
+</div>
+<!-- <script src="/asset/js/i18next.js"></script>
+<script src="/asset/js/i18next-http-backend.js"></script> -->
+
+
+
+<div id="friend-list-container" class="friend-list-container">
+    <h2>Gestion des Amis</h2>
+    <div class="friend-list-actions">
+        <button id="view-friends-id" class="view-friends">Voir la liste des amis</button>
+        <button id="add-friend-id" class="add-friend">Ajouter un ami</button>
+        <button id="remove-friend-id" class="remove-friend">Supprimer un ami</button>
+        <button id="close-friend-list" class="close-friend-list">Fermer la Gestion des Amis</button>
+        <div class="parents-list">
+            <ul id="friend-list-display-id" class="friend-list-display"></ul>
+        </div>
+       
+    </div>
+</div> 

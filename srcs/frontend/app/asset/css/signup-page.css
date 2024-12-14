@@ -1,0 +1,39 @@
+/* Signup Page */
+.signup-page .form-container {
+    border: 3px solid #f8f8f2;
+    margin-top: 10%;
+}
+
+.username-signup-field,
+.email-signup-field,
+.password-signup-field,
+.confirm-password-field {
+    border: 3px solid #f8f8f2;
+    background-color: black;
+    color: #f8f8f2;
+}
+
+.button-confirm-signup,
+.back-button-signup {
+    color: white;
+    border: 3px solid #f8f8f2;
+    background-color: black;
+    text-decoration: none;
+}
+
+.button-confirm-signup:hover,
+.back-button-signup:hover {
+    color: black;
+    background-color: white;
+}
+
+#register-form {
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	width: 400px;
+}
+
+#register-form > label {
+	width:400px;
+}

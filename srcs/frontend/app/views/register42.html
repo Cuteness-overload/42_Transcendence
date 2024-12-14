@@ -1,0 +1,58 @@
+<!-- register42.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="register42.form_title">Inscription via 42 - Ft_transcendence</title>
+    <link rel="stylesheet" href="/asset/css/spinners/register42-spinner.css">
+    <link rel="stylesheet" href="/asset/css/styles.css"> <!-- Assurez-vous d'inclure votre CSS principal -->
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title" data-i18n="register42.form_title">Inscription via 42</h2>
+
+        <!-- Conteneur pour les alertes avec une classe spécifique -->
+        <div class="alert-container"></div>
+
+        <form id="register42-form">
+            <label for="email" data-i18n="register42.email_label">Email</label>
+            <input type="email" id="email" name="email" required aria-describedby="error-message" readonly data-i18n-attr="placeholder" placeholder="Email">
+
+            <label for="username" data-i18n="register42.username_label">Nom d'utilisateur</label>
+            <input type="text" id="username" name="username" required minlength="3" data-i18n="register42.username_placeholder" data-i18n-attr="placeholder" placeholder="Nom d'utilisateur">
+
+            <label for="password" data-i18n="register42.password_label">Mot de passe</label>
+            <input type="password" id="password" name="password" required aria-describedby="error-message" data-i18n="register42.password_placeholder" data-i18n-attr="placeholder" placeholder="Mot de passe">
+
+            <label for="confirm-password" data-i18n="register42.confirm_password_label">Confirmer le mot de passe</label>
+            <input type="password" id="confirm-password" name="confirm-password" required aria-describedby="error-message" data-i18n="register42.confirm_password_placeholder" data-i18n-attr="placeholder" placeholder="Confirmer le mot de passe">
+
+            <button type="submit" class="signup-button retro-button" data-i18n="register42.submit_button">S'inscrire</button>
+        </form>
+
+        <button id="back-to-login-button" class="back-button retro-button" data-i18n="register42.back_button">Retour</button>
+    </div>
+
+    <!-- Overlay de chargement -->
+    <div id="register42-loading-overlay" class="register42-loading-overlay" style="display: none;">
+        <div class="register42-spinner-container">
+            <div class="register42-spinner-large"></div>
+            <p class="register42-loading-text" data-i18n="register42.loading_text">Inscription...</p>
+        </div>
+        <!-- Conteneur pour le check de confirmation -->
+        <div id="register42-success-check" class="register42-success-check" style="display: none;">
+            <svg class="register42-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="register42-checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="register42-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            <p class="register42-success-text" data-i18n="register42.success_text">Inscription réussie !</p>
+        </div>
+    </div>
+
+    <!-- Your JavaScript files -->
+    <script src="/asset/js/i18next.js"></script>
+    <script src="/asset/js/i18next-http-backend.js"></script>
+    <script src="/asset/js/alertManager.js"></script>
+    <script src="/asset/js/register42.js"></script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+/* /asset/css/styles.css */
+
+/* Import de la police */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+/* Variables CSS pour une gestion facilitée des couleurs et thèmes */
+:root {
+    --primary-color: #ff0080;
+    --secondary-color: #00ffcc;
+    --background-color: #111;
+    --text-color: white;
+    --error-color: #f44336;
+    --success-color: #4CAF50;
+    --alert-padding: 8px;
+    --alert-margin-bottom: 10px;
+    --alert-font-size: 12px;
+    --input-padding: 6px;
+    --input-font-size: 13px;
+    --label-font-size: 0.75em;
+    --button-padding: 10px;
+    --button-font-size: calc(10px + 0.4vw);
+    --button-margin: 8px;
+    --form-padding: 15px;
+    --form-margin-top: 15px;
+    --form-title-font-size: 1.2em;
+    --form-title-margin-bottom: 10px;
+}
+
+/* Styles de base */
+
+/* Fond de la page avec effet brique */
+body {
+    background-image: url('https://www.photos-public-domain.com/wp-content/uploads/2011/03/dark-purple-brick-wall-texture.jpg'); /* Image de briques */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: var(--text-color);
+    font-family: "Audiowide", sans-serif;
+    text-align: center;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Empêche toute transformation sur le body et .content */
+body, .content {
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Classe pour désactiver le scroll */
+.no-scroll {
+    overflow: hidden;
+}
+
+#app {
+	padding-top: 0px;
+}
+
+/* Titre de la page avec effet néon */
+h1, h2 {
+    font-size: 2em;
+    margin-top: 20px;
+    text-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12, 0 0 20px #f39c12;
+}
+h3 {
+    color: #00ffcc;
+    font-size: 2em;
+    margin-top: 20px;
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+/* Contenu principal */
+.content {
+    text-align: center;
+    margin-top: 0px;
+    padding: var(--form-padding); /* Réduit le padding */
+    box-sizing: border-box;
+    height: auto;
+}
+
+/* Champs de texte */
+label {
+    display: block; /* Assure que le label est un élément de bloc */
+    font-size: var(--label-font-size); /* Taille de police réduite */
+    margin-top: 5px; /* Réduit la marge supérieure */
+    margin-bottom: 5px; /* Ajoute une petite marge inférieure */
+    text-align: left; /* Aligne le texte à gauche */
+    width: 32%; /* Prend toute la largeur */
+    white-space: nowrap; /* Empêche le wrapping du texte */
+}
+
+#message {
+    white-space: pre-line; /* Preserves newlines while collapsing extra spaces */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+.retro-input {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: var(--input-padding); /* Réduit le padding */
+    margin: 4px 0; /* Réduit les marges */
+    box-sizing: border-box; /* Inclut les paddings et bordures dans la largeur totale */
+    font-size: var(--input-font-size); /* Réduit la taille de la police */
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    font-family: 'Audiowide', cursive;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+.retro-input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Boutons */
+button, .retro-button, .oauth-button {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color); /* Utilisation de la variable CSS */
+    padding: var(--button-padding); /* Réduit le padding */
+    font-size: var(--button-font-size); /* Ajuste la taille de la police */
+    cursor: pointer;
+    font-family: "Audiowide", sans-serif;
+    transition: all 0.3s ease;
+    margin: var(--button-margin); /* Réduit les marges */
+    width: 80%; /* Ajustez la largeur si nécessaire */
+    max-width: 240px;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+}
+
+button:hover, .retro-button:hover, .oauth-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 20px #ff66b2, 0 0 40px #ff66b2;
+    cursor: pointer;
+}
+
+/* Alertes */
+
+/* Positionnement des alertes uniquement sur la page de profil */
+.profile-page #profile-alert-container {
+    position: absolute;
+    top: 80px; /* Ajustez cette valeur pour placer l'alerte à l'équilibre */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000; /* Assure que l'alerte est au-dessus des autres éléments */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none; /* Permet de cliquer à travers les alertes si nécessaire */
+}
+
+/* Styles généraux pour les alertes dans la page de profil */
+.profile-page #profile-alert-container .alert {
+    pointer-events: auto; /* Permet l'interaction avec les alertes */
+    margin: 5px 0; /* Espace entre les alertes */
+    /* Supprimez ou ajustez les marges si elles causent des déplacements */
+}
+
+/* Optionnel : Ajustement de la marge de la section avatar */
+/* Assurez-vous de ne pas ajouter de marge-top qui pourrait déplacer l'avatar */
+.profile-page .avatar-section {
+    /* Supprimez ou ajustez la marge-top si elle cause des déplacements */
+    margin-top: 50px; /* Ajustez cette valeur si nécessaire */
+}
+
+/* Conteneur d'alertes */
+.alert-container {
+    /* Les alertes s'afficheront dans le flux normal de la page */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    pointer-events: none; /* Pour ne pas gêner les clics sous l'alerte */
+    margin-bottom: 10px; /* Espace en dessous de l'alerte */
+}
+
+/* Styles généraux pour les alertes */
+.alert {
+    padding: var(--alert-padding);
+    margin-bottom: var(--alert-margin-bottom);
+    font-size: var(--alert-font-size);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-family: 'Audiowide', cursive;
+    opacity: 1;
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Icône dans les alertes */
+.alert .alert-icon {
+    font-size: 1.2em;
+    animation: pop-in 0.3s ease;
+}
+
+/* Animation pour l'icône */
+@keyframes pop-in {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Styles spécifiques pour les types d'alertes */
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Animation pour les alertes */
+.alert.fade {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.alert.show {
+    opacity: 1;
+}
+
+/* Bouton de fermeture pour les alertes */
+.close-button {
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1;
+    color: inherit;
+    text-shadow: none;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #000;
+}
+/* Formulaire */
+.form-container {
+    border: 2px solid white;
+    width: fit-content;
+    padding: 20px;
+    margin: -40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-title {
+    font-size: 2.5em;
+    margin: 34px 0px;
+}
+/* Media Queries pour Responsivité */
+
+@media (max-width: 1120px) {
+	#app {
+		padding-top: 80px;
+	}
+}
+
+@media (max-width: 768px) {
+    .nav-button {
+        padding: 8px 16px;
+        font-size: 0.7em;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+
+    .retro-button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .content {
+        margin-top: 60px; /* Ajuste la marge pour les petits écrans */
+    }
+
+	#app {
+		padding-top: 140px;
+	}
+}
+
+/* Classe personnalisée pour les gaps */
+.custom-gap {
+    gap: 20px; /* Ajustez selon vos besoins */
+}
+
+/* ----------------------------------------- */
+/* Nouveaux Styles pour le Spinner de Chargement et les Notifications */
+/* ----------------------------------------- */
+
+/* Container pour le spinner centré */
+.spinner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Hauteur pour centrer verticalement */
+}
+
+/* Style personnalisé pour le spinner néon */
+.neon-spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 0.4em solid var(--secondary-color);
+    /* border-top: 0.4em solid rgba(253, 13, 237, 0.696); */
+    border-top: 0.4em solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
+}
+
+/* Animation de rotation */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Style pour le texte de chargement */
+.loading-text {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    text-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
+    font-family: 'Audiowide', cursive;
+}
+
+/* Notifications personnalisées */
+.friend-added-notification {
+    position: fixed;
+    top: 130px;
+    right: 20px;
+    width: 22%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Audiowide', cursive;
+    font-size: 1em;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+
+#friend-added-notification
+{
+    position: fixed;
+    top: 130px;
+    right: 20px;
+    width: 22%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Audiowide', cursive;
+    font-size: 1em;
+ 
+}
+/* Amélioration des alertes Bootstrap pour le thème néon */
+.alert-success {
+    background-color: rgba(76, 175, 80, 0.8) !important;
+    color: white !important;
+    border-color: rgba(76, 175, 80, 1) !important;
+}
+
+.alert-danger {
+    background-color: rgba(244, 67, 54, 0.8) !important;
+    color: white !important;
+    border-color: rgba(244, 67, 54, 1) !important;
+}
+
+/* ----------------------------------------- */
+/* Styles pour l'état de chargement et contenu */
+/* ----------------------------------------- */
+
+/* Masquer le contenu pendant le chargement */
+.profile-page.loading .profile-content {
+    display: none;
+}
+
+/* Afficher le contenu après le chargement */
+.profile-page.loaded .profile-content {
+    display: block;
+}
+
+/* Afficher le spinner pendant le chargement */
+.profile-page.loading .spinner-container {
+    display: flex;
+}
+
+/* Masquer le spinner après le chargement */
+.profile-page.loaded .spinner-container {
+    display: none;
+}
